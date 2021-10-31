@@ -89,7 +89,7 @@ When a new message has been posted to bubblez a message will be sent containing 
     }
 }
 ```
-Inside of postdata you will get the information you would receive from the api/v1/getpost api endpoint (Read the api documentation to see what information will be sent).
+Inside of postdata you will get the information you would receive from the api/v1/post/get api endpoint (Read the api documentation to see what information will be sent).
 
 ## New reply
 When a new reply has been posted to bubblez a message will be sent containing the following data:
@@ -104,5 +104,17 @@ When a new reply has been posted to bubblez a message will be sent containing th
     }
 }
 ```
-Inside of postdata you will get the information you would receive from the api/v1/getpost api endpoint (Read the api documentation to see what information will be sent).  
-Inside of replydata you will get the information you would receive from the postdata and then read the reply from the replies data (api/v1/getpost -> replies -> the reply that has just been posted).
+Inside of postdata you will get the information you would receive from the api/v1/post/get api endpoint (Read the api documentation to see what information will be sent).  
+Inside of replydata you will get the information you would receive from the postdata and then read the reply from the replies data (api/v1/post/get -> replies -> the reply that has just been posted).
+
+## New devlog
+When a new devlog has been posted to bubblez a message will be sent containing the following data:
+```JSON
+{
+    "message": "NEW_DEVLOG",
+    "postdata": {
+        
+    }
+}
+```
+Inside of postdata you will get the information you would receive from the api/v1/blog/latest api endpoint (Read the api documentation to see what information will be sent).  
