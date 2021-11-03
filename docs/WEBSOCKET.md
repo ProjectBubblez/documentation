@@ -117,4 +117,48 @@ When a new devlog has been posted to bubblez a message will be sent containing t
     }
 }
 ```
-Inside of postdata you will get the information you would receive from the api/v1/blog/latest api endpoint (Read the api documentation to see what information will be sent).  
+Inside of postdata you will get the information you would receive from the api/v1/blog/latest api endpoint (Read the api documentation to see what information will be sent).
+
+## New like
+When someone likes a post a message will be sent containing the following data:
+```JSON
+{
+    "message": "NEW_LIKE",
+    "id": 1,
+    "type": "post",
+    "userdata": {
+        
+    }
+}
+```
+Inside of userdata you will get the information you would receive from the api/v1/user/get api endpoint without posts and replies (Read the api documentation to see what information will be sent).
+The id is the id of the post/reply that was liked.
+The type can either be post or reply, if it's post a post was liked and if it's reply a reply was liked.
+
+## New Follower
+When someone follows a user a message will be sent containing the following data:
+```JSON
+{
+    "message": "NEW_FOLLOWER",
+    "followedid": 1,
+    "userdata": {
+    
+    }
+}
+```
+Inside of userdata you will get the information you would receive from the api/v1/user/get api endpoint without posts and replies (Read the api documentation to see what information will be sent).
+the followedid is the uuid of the user that was followed.
+
+## Unfollowed
+When someone unfollows a user a message will be sent containing the following data:
+```JSON
+{
+    "message": "UNFOLLOWED",
+    "followedid": 1,
+    "userdata": {
+    
+    }
+}
+```
+Inside of userdata you will get the information you would receive from the api/v1/user/get api endpoint without posts and replies (Read the api documentation to see what information will be sent).
+the followedid is the uuid of the user that was followed.
