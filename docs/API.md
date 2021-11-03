@@ -9,8 +9,8 @@ For canary: https://canary.bubblez.app/api/v1
 
 ##Requests
 
-`POST` /blog/latest
-`token` - api token for settings
+`POST` /blog/latest  
+`token` - api token for settings  
 
 receive:
 ```json
@@ -25,12 +25,12 @@ receive:
 }
 ```
 
-`POST` /post/send
-`token` - api token for settings
-`post` - the message you want the post to contain
-`from` - the little message next to the post date
-`locked` - accepts value `true` defaults to false
-`nsfw` - accepts value `true` defaults to false
+`POST` /post/send  
+`token` - api token for settings  
+`post` - the message you want the post to contain  
+`from` - the little message next to the post date  
+`locked` - accepts value `true` defaults to false  
+`nsfw` - accepts value `true` defaults to false  
 
 receive:
 ```json
@@ -44,10 +44,10 @@ receive:
 }
 ```
 
-`POST` /post/lock
-`token` - api token for settings
-`postid` - the id of the post you want to lock or unlock
-`togglelock` - accepted values `true` or `false`
+`POST` /post/lock  
+`token` - api token for settings  
+`postid` - the id of the post you want to lock or unlock  
+`togglelock` - accepted values `true` or `false`  
 
 receive:
 ```json
@@ -61,10 +61,10 @@ receive:
 }
 ```
 
-`POST` /post/delete
-`token` - api token for settings
-`postid` - the id of the post you wish to delete
-`confirm` - accepted value `true` anything else will cancel the request
+`POST` /post/delete  
+`token` - api token for settings  
+`postid` - the id of the post you wish to delete  
+`confirm` - accepted value `true` anything else will cancel the request  
 
 receive:
 ```json
@@ -73,9 +73,9 @@ receive:
 }
 ```
 
-`POST` /post/get
-`token` - api token for settings
-`postid` - the id of the post you wish to collect info on
+`POST` /post/get  
+`token` - api token for settings  
+`postid` - the id of the post you wish to collect info on  
 
 receive:
 ```json
@@ -105,8 +105,8 @@ receive:
 }
 ```
 
-`POST` /post/latest
-`token` - api token for settings
+`POST` /post/latest  
+`token` - api token for settings  
 
 receive:
 ```json
@@ -116,12 +116,12 @@ receive:
 }
 ```
 
-`POST` /reply/send
-`token` - api token for settings
-`postid` - the id of the post you want to reply to
-`reply` - the message you want the reply to contain
-`from` - the little message next to the reply date
-`nsfw` - accepts value `true` defaults to false
+`POST` /reply/send  
+`token` - api token for settings  
+`postid` - the id of the post you want to reply to  
+`reply` - the message you want the reply to contain  
+`from` - the little message next to the reply date  
+`nsfw` - accepts value `true` defaults to false  
 
 receive:
 ```json
@@ -135,10 +135,10 @@ receive:
 }
 ```
 
-`POST` /reply/delete
-`token` - api token for settings
-`replyid` - the id of the reply you wish to delete
-`confirm` - accepted value `true` anything else will cancel the request
+`POST` /reply/delete  
+`token` - api token for settings  
+`replyid` - the id of the reply you wish to delete  
+`confirm` - accepted value `true` anything else will cancel the request  
 
 receive:
 ```json
@@ -147,8 +147,8 @@ receive:
 }
 ```
 
-`POST` /user/check
-`token` - api token for settings
+`POST` /user/check  
+`token` - api token for settings  
 
 receive:
 ```json
@@ -201,9 +201,9 @@ receive:
 
 `NOTE: UUID will not be null on the main site, we're just showing examples from canary`
 
-`POST` /user/get
-`token` - api token for settings
-`username` - the bubblez username of the user you want to grab info from
+`POST` /user/get  
+`token` - api token for settings  
+`username` - the bubblez username of the user you want to grab info from  
 
 receive:
 
@@ -242,8 +242,8 @@ receive:
 }
 ```
 
-`POST` /user/ping
-`token` - api token for settings
+`POST` /user/ping  
+`token` - api token for settings  
 
 receive:
 ```json
@@ -254,10 +254,10 @@ receive:
 }
 ```
 
-`POST` /post/edit
-`token` - api token for settings
-`postid` - the id of the post you want to edit
-`post` - the message you want to change your post to
+`POST` /post/edit  
+`token` - api token for settings  
+`postid` - the id of the post you want to edit  
+`post` - the message you want to change your post to  
 
 ```json
 {
@@ -265,10 +265,10 @@ receive:
 }
 ```
 
-`POST` /reply/edit
-`token` - api token for settings
-`replyid` - the id of the reply you want to edit
-`reply` - the message you want to change your reply to
+`POST` /reply/edit  
+`token` - api token for settings  
+`replyid` - the id of the reply you want to edit  
+`reply` - the message you want to change your reply to  
 
 ```json
 {
