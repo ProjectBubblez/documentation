@@ -7,7 +7,9 @@ You must re
 For live: https://bubblez.app/api/v1  
 For canary: https://canary.bubblez.app/api/v1  
 
-##Requests
+## Requests
+
+## Blogs
 
 `POST` /blog/latest  
 `token` - api token for settings  
@@ -24,6 +26,8 @@ receive:
     "blogdate": "1990-01-01 00:00:00"
 }
 ```
+
+## Posts
 
 `POST` /post/send  
 `token` - api token for settings  
@@ -116,6 +120,19 @@ receive:
 }
 ```
 
+`POST` /post/edit  
+`token` - api token for settings  
+`postid` - the id of the post you want to edit  
+`post` - the message you want to change your post to  
+
+```json
+{
+    "200": "Post 522 has been updated"
+}
+```
+
+## Replies
+
 `POST` /reply/send  
 `token` - api token for settings  
 `postid` - the id of the post you want to reply to  
@@ -146,6 +163,20 @@ receive:
     "200": "reply 1473 has been deleted"
 }
 ```
+
+`POST` /reply/edit  
+`token` - api token for settings  
+`replyid` - the id of the reply you want to edit  
+`reply` - the message you want to change your reply to  
+
+```json
+{
+    "200": "Reply 1473 has been updated"
+}
+```
+
+
+## Users
 
 `POST` /user/check  
 `token` - api token for settings  
@@ -251,27 +282,5 @@ receive:
     "200": "Pong",
     "username": "DarkMatter",
     "online_status": "2021-07-30 13:03:18"
-}
-```
-
-`POST` /post/edit  
-`token` - api token for settings  
-`postid` - the id of the post you want to edit  
-`post` - the message you want to change your post to  
-
-```json
-{
-    "200": "Post 522 has been updated"
-}
-```
-
-`POST` /reply/edit  
-`token` - api token for settings  
-`replyid` - the id of the reply you want to edit  
-`reply` - the message you want to change your reply to  
-
-```json
-{
-    "200": "Reply 1473 has been updated"
 }
 ```
