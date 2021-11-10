@@ -188,7 +188,7 @@ receive:
     "uuid": null,
     "username": "DarkMatter",
     "displayname": "DarkMatter",
-    "email": "zak@bubblez.app",
+    "email": null,
     "pfp": "https://i.imgur.com/jAOd5gE.png",
     "banner": "https://i.imgur.com/1bZdeBF.png",
     "coins": "85",
