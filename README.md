@@ -16,4 +16,4 @@
 
 [^BJS]: Bubblez.js is maintained by [SliceCraft](https://github.com/SliceCraft).
 [^BPY]: Bubblez.py is maintained by [MeesMeijer](https://github.com/MeesMeijer).
-[^V0]: V0 of the websocket has been deprecated since `November 30th 2021`.
+[^V0]: V0 of the websocket has been discontinued since `November 30th 2021`.
