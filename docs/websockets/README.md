@@ -16,7 +16,7 @@ Below you can see a table of versions.
   </tr>
   <tr>
     <td><a href="https://github.com/ProjectBubblez/documentation/blob/main/docs/websockets/V0.md">V0</a></td>
-    <td>Deprecated</td>
+    <td>Discontinued</td>
   </tr>
 </table>
 
