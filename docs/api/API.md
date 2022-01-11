@@ -5,7 +5,7 @@ This documentation contains everything you need to know about the official bubbl
 ## URLS
 You must re
 For live: https://bubblez.app/api/v1  
-For canary: https://canary.bubblez.app/api/v1  
+For canary: Dead
 
 ## Requests
 
