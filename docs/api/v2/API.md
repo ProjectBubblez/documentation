@@ -136,7 +136,7 @@ request:
 ```json
 {
 	"token": "string",
-	"parent_id": "string",
+	"parent": "string",
 	"content": "string",
 	"from": "string",
 	"lock": "boolean",
