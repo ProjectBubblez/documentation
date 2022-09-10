@@ -1,5 +1,5 @@
 
-# API Documentation
+# API Documentation V1
 This documentation contains everything you need to know about the official bubblez api.
 
 ## URLS
@@ -230,7 +230,7 @@ receive:
 }
 ```
 
-`NOTE: If an account is private it will throw the an error`
+`NOTE: UUID will not be null on the main site, we're just showing examples from canary`
 
 `POST` /user/get  
 `token` - api token from settings  
@@ -241,21 +241,20 @@ receive:
 ```json
 {
     "200": "Found user",
-    "uuid": "bblz_606df56f4d112",
+    "uuid": null,
     "username": "embed",
     "displayname": "embed",
-    "followers": 26,
-    "pfp": "https://cds.bubblez.app/v2/get/bblz_606df56f4d112/display",
-    "banner": "https://cds.bubblez.app/v2/get/bblz_606df56f4d112/banner",
-    "coins": "70",
-    "rank": "[\"founder\", \"verified\"]",
-    "badges": "[\"lgbt19\", \"alpha\"]",
-    "patreon": "false",
-    "booster": "false",
+    "followers": 2,
+    "pfp": "https://i.imgur.com/Md5C3uy.gif",
+    "banner": null,
+    "coins": "0",
+    "rank": "founder",
+    "eventr": "lgbt19",
+    "patreon": "true",
+    "booster": "true",
     "bio": "the best bubblez dev.",
     "nsfw": "false",
-    "private": "false",
-    "pronoun": "hehim",
+    "pronoun": "none",
     "ban": null,
     "created_at": "2019-10-22 12:04:01",
     "last_posted": null,
