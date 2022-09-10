@@ -88,7 +88,7 @@ response:
 }
 ```
 
-`NOTE1`: `if "true" post has been locked, if "false" post has been unlocked`
+`NOTE1`: `if "true" post has been locked, if "false" post has been unlocked`  
 `NOTE2`: `if "true" post has been set as nsfw, if "false" post has been unset as nsfw`
 
 ----------------------------------------------------------------------------------
@@ -178,7 +178,7 @@ request:
 }
 ```
 
-`NOTE1`: `please only send "username" OR "uuid", if you send both it will return an error`
+`NOTE1`: `please only send "username" OR "uuid", if you send both it will return an error`  
 `NOTE2`: `if both are null will send bot info`
 
 response:
@@ -202,8 +202,8 @@ response:
 }
 ```
 
-`NOTE1`: `type: 0 = User, 1 = Bot`
-`NOTE2`: `both nsfw and private will be "false" for bot accounts`
+`NOTE1`: `type: 0 = User, 1 = Bot`  
+`NOTE2`: `both nsfw and private will be "false" for bot accounts`  
 `NOTE3`: `A way to get other bot info will come later`
 
 ----------------------------------------------------------------------------------
