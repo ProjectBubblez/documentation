@@ -1,7 +1,7 @@
 # API Documentation V2
 - This is a list of all the current endpoints with updated methods and responses (after will be a list of new endpoints for v2)
-- Draft 1
-
+- Draft 2
+- `reason` can be left NULL if you don't want a reason to your actions
 ----------------------------------------------------------------------------------
 ### Blogs
 ----------------------------------------------------------------------------------
@@ -16,15 +16,19 @@ you don't need to send any data (this is a public endpoint)
 response:
 ```json
 {
-	'code': 200,
-	'blog_id': "string",
-	'blog_username': "string",
-	'blog_displayname': "string",
-	'blog_pfp': "string",
-	'blog_content': "string",
-	'blog_image': "string",
-	'blog_tag': "string",
-	'blog_date': "integer"
+	"error": false,
+	"blog": {
+		"content": "string",
+		"image": "string",
+		"tag": "string",
+		"date": "integer"
+	},
+	"user": {
+		"uuid": "string",
+		"username": "string",
+		"displayname": "string",
+		"pfp": "string"
+	}
 }
 ```
 
@@ -37,46 +41,55 @@ response:
 request:
 ```json
 {
-	'token': "string",
-	'reason': "string" (can be left as null)
+	"token": "string",
+	"reason": "string"
 }
 ```
 
 response:
 ```json
 {
-	'code': 200,
-	'delete_post_id': "string",
-	'delete_post_reason': "string"
+	"error": false,
+	"post": {
+		"id": "string",
+	},
+	"reason": "string"
 }
 ```
 
 ----------------------------------------------------------------------------------
 
-`PATCH` `/post/{post_id}`
+`UPDATE` `/post/{post_id}`
 
 request:
 ```json
 {
-	'token': "string",
-	'content': "string", (if left as null, nothing will be updated)
-	'lock': "boolean", (if left as null, nothing will be updated)
-	'nsfw': "boolean", (if left as null, nothing will be updated)
-	'reason': "string" (can be left as null)
+	"token": "string",
+	"content": "string",
+	"lock": "boolean",
+	"nsfw": "boolean",
+	"reason": "string"
 }
 ```
+
+`NOTE`: `for content, lock and nsfw: if left as null, nothing will be updated`
 
 response:
 ```json
 {
-	'code': 200,
-	'update_post_id': "string",
-	'update_post_content': "string",
-	'update_post_lock': "boolean", (if "true" post has been locked, if "false" post has been unlocked)
-	'update_post_nsfw': "boolean", (if "true" post has been set as nsfw, if "false" post has been unset as nsfw)
-	'update_post_reason': "string"
+	"error": false,
+	"post": {
+		"id": "string",
+		"content": "string",
+		"lock": "boolean",
+		"nsfw": "boolean"
+	},
+	"reason": "string"
 }
 ```
+
+`NOTE1`: `if "true" post has been locked, if "false" post has been unlocked`
+`NOTE2`: `if "true" post has been set as nsfw, if "false" post has been unset as nsfw`
 
 ----------------------------------------------------------------------------------
 
@@ -85,27 +98,32 @@ response:
 request:
 ```json
 {
-	'token': "string"
+	"token": "string"
 }
 ```
 
 response:
 ```json
 {
-	'code': 200,
-	'post_id': "string",
-	'post_username': "string",
-	'post_displayname': "string",
-	'post_pfp': "string",
-	'post_content': "string",
-	'post_from': "string",
-	'post_lock': "boolean",
-	'post_nsfw': "boolean",
-	'post_edited': "integer",
-	'post_date': "integer",
-	'post_replies': {
-		'post_reply_id': "integer",
-		'post_reply_id': "integer"
+	"error": false,
+	"post": {
+		"id": "string",
+		"content": "string",
+		"from": "string",
+		"lock": "boolean",
+		"nsfw": "boolean",
+		"edited": "integer",
+		"date": "integer",
+		"replies": {
+			"id": "string",
+			"id": "string"
+		}
+	},
+	"user": {
+		"uuid": "string",
+		"username": "string",
+		"displayname": "string",
+		"pfp": "string"
 	}
 }
 ```
@@ -117,106 +135,33 @@ response:
 request:
 ```json
 {
-	'token': "string",
-	'content': "string",
-	'from': "string",
-	'lock': "boolean", (default "false")
-	'nsfw': "boolean" (default "false")
+	"token": "string",
+	"parent_id": "string",
+	"content": "string",
+	"from": "string",
+	"lock": "boolean",
+	"nsfw": "boolean"
 }
 ```
+
+`NOTE`: `for lock and nsfw: default "false"`
 
 response:
 ```json
 {
-	'code': 200,
-	'post_id': "string",
-	'post_content': "string",
-	'post_from': "string",
-	'post_lock': "boolean",
-	'post_nsfw': "boolean"
+	"error": false,
+	"post": {
+		"id": "string",
+		"parent_id": "string",
+		"content": "string",
+		"from": "string",
+		"lock": "boolean",
+		"nsfw": "boolean"
+	}
 }
 ```
 
-----------------------------------------------------------------------------------
-### Replies
-----------------------------------------------------------------------------------
-
-`DELETE` `/reply/{reply_id}`
-
-request:
-```json
-{
-	'token': "string",
-	'reason': "string" (can be left as null)
-}
-```
-
-response:
-```json
-{
-	'code': 200,
-	'delete_reply_id': "string",
-	'delete_reply_reason': "string"
-}
-```
-
-----------------------------------------------------------------------------------
-
-`PATCH` `/reply/{reply_id}`
-
-request:
-```json
-{
-	'token': "string",
-	'content': "string", (if left as null, nothing will be updated)
-	'lock': "boolean", (if left as null, nothing will be updated)
-	'nsfw': "boolean", (if left as null, nothing will be updated)
-	'reason': "string" (can be left as null)
-}
-```
-
-response:
-```json
-{
-	'code': 200,
-	'update_reply_id': "string",
-	'update_reply_content': "string",
-	'update_reply_lock': "boolean", (if "true" reply has been locked, if "false" reply has been unlocked)
-	'update_reply_nsfw': "boolean", (if "true" reply has been set as nsfw, if "false" reply has been unset as nsfw)
-	'update_reply_reason': "string"
-}
-```
-
-----------------------------------------------------------------------------------
-
-`POST` `/reply/{p OR r}/{post/reply_id}`
-
-request:
-```json
-{
-	'token': "string",
-	'id': "string",
-	'content': "string",
-	'from': "string",
-	'lock': "boolean", (default "false")
-	'nsfw': "boolean" (default "false")
-}
-```
-
-response:
-```json
-{
-	'code': 200,
-	'reply_post_id': "string" OR 'reply_reply_id': "string",
-	'reply_id': "string",
-	'reply_content': "string",
-	'reply_from': "string",
-	'reply_lock': "boolean",
-	'reply_nsfw': "boolean"
-}
-```
-
-`NOTE`: `I understand this one might be confusing but more will be explained later`
+`NOTE`: `you only need "parent_id" if you're replying to a post or another reply`
 
 ----------------------------------------------------------------------------------
 ### Users
@@ -227,31 +172,39 @@ response:
 request:
 ```json
 {
-	'token': "string",
-	'username': "string" || 'uuid': "string" (should only send one will return error if both are sent. if both are null will send bot info)
+	"token": "string",
+	"username": "string",
+	"uuid": "string"
 }
 ```
+
+`NOTE1`: `please only send "username" OR "uuid", if you send both it will return an error`
+`NOTE2`: `if both are null will send bot info`
 
 response:
 ```json
 {
-	'code': 200,
-	'user_bot': "boolean", (FALSE FOR USERS)
-	'user_uuid': "string",
-	'user_username': "string",
-	'user_displayname': "string",
-	'user_banner': "string",
-	'user_badge': "json",
-	'user_special_badge': "json",
-	'user_bio': "string",
-	'user_nsfw': "boolean", (NULL FOR BOTS)
-	'user_private': "boolean", (NULL FOR BOTS)
-	'user_pronoun': "json",
-	'user_joined': "integer"
+	"error": false,
+	"user": {
+		"type": "integer",
+		"uuid": "string",
+		"username": "string",
+		"displayname": "string",
+		"banner": "string",
+		"badge": "json",
+		"special_badge": "json",
+		"bio": "string",
+		"nsfw": "boolean",
+		"private": "boolean",
+		"pronoun": "json",
+		"joined": "integer"
+	}
 }
 ```
 
-`NOTE`: `A way to get other bot info will come later`
+`NOTE1`: `type: 0 = User, 1 = Bot`
+`NOTE2`: `both nsfw and private will be "false" for bot accounts`
+`NOTE3`: `A way to get other bot info will come later`
 
 ----------------------------------------------------------------------------------
 
@@ -260,14 +213,14 @@ response:
 request:
 ```json
 {
-	'token': "string"
+	"token": "string"
 }
 ```
 
 response:
 ```json
 {
-	'code': 200
+	"error": false
 }
 ```
 
@@ -277,17 +230,17 @@ response:
 ### NEW FOR V2
 ----------------------------------------------------------------------------------
 
-`PATCH` `/update`
+`UPDATE` `/profile`
 
 request:
 ```json
 {
-	'token': "string",
-	'username': "string",
-	'displayname': "string",
-	'pfp': "string",
-	'banner': "string",
-	'bio': "string"
+	"token": "string",
+	"username": "string",
+	"displayname": "string",
+	"pfp": "string",
+	"banner": "string",
+	"bio": "string"
 }
 ```
 
@@ -296,12 +249,14 @@ request:
 response:
 ```json
 {
-	'code': 200,
-	'updated_username': "string",
-	'updated_displayname': "string",
-	'updated_pfp': "string",
-	'updated_banner': "string",
-	'updated_bio': "string"
+	"error": false,
+	"updated": {
+		"username": "string",
+		"displayname": "string",
+		"pfp": "string",
+		"banner": "string",
+		"bio": "string"
+	}
 }
 ```
 
