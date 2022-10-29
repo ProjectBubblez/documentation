@@ -3,16 +3,15 @@
 This documentation contains everything you need to know about the official bubblez api.
 
 ## URLS
-You must re
+You must apply for a token at https://bubblez.app/applications/api-token  
 For live: https://bubblez.app/api/v1  
-For canary: Dead
+For canary: Depricated
 
 ## Requests
 
 ## Blogs
 
 `POST` /blog/latest  
-`token` - api token from settings  
 
 receive:
 ```json
@@ -23,6 +22,8 @@ receive:
     "blogposter_displayname": "",
     "blogposter_pfp": "",
     "blogcontent": "",
+    "blogimage": "",
+    "blogtag": "",
     "blogdate": "1990-01-01 00:00:00"
 }
 ```
@@ -87,20 +88,21 @@ receive:
     "200": "Found post",
     "postid": "522",
     "username": "DarkMatter",
-    "pfp": "https://i.imgur.com/jAOd5gE.png",
-    "nsfw": "false",
+    "pfp": "https://cds.bubblez.app/v2/get/bblz_606df5400f64a/display",
     "content": "API is cool",
     "from": "API testing",
     "locked": "false",
+    "pnsfw": "false",
     "edited": null,
     "post_date": "2021-07-30 12:18:31",
     "replies": [
         {
             "replyid": "1473",
             "username": "DarkMatter",
-            "pfp": "https://i.imgur.com/jAOd5gE.png",
+            "pfp": "https://cds.bubblez.app/v2/get/bblz_606df5400f64a/display",
             "content": "Cool reply with the API",
             "from": null,
+            "rnsfw": "false",
             "deleted": null,
             "edit_date": null,
             "reply_date": "2021-07-30 12:49:12"
@@ -185,32 +187,30 @@ receive:
 ```json
 {
     "200": "Found user",
-    "uuid": null,
-    "username": "DarkMatter",
-    "displayname": "DarkMatter",
+    "uuid": "bblz_606df5400f64a",
+    "username": "Zak",
+    "displayname": "Zak",
     "email": null,
-    "pfp": "https://i.imgur.com/jAOd5gE.png",
-    "banner": "https://i.imgur.com/1bZdeBF.png",
-    "coins": "85",
-    "rank": "founder",
-    "eventr": "darkmatter",
-    "patreon": "true",
-    "booster": "true",
-    "bio": "We don't know much about them, but we're sure DarkMatter is great.",
+    "pfp": "https://cds.bubblez.app/v2/get/bblz_606df5400f64a/display",
+    "banner": "https://cds.bubblez.app/v2/get/bblz_606df5400f64a/banner",
+    "coins": "865",
+    "rank": "[\"founder\", \"verified\"]",
+    "badges": "[\"lgbt22\", \"alpha\", \"private\"]",
+    "bio": "Just doing internet things\r\n\r\nbblz_606df56eeb955 CEO",
     "nsfw": "false",
     "dob": null,
     "pronoun": "hehim",
     "ban": null,
     "created_at": "2019-10-21 07:40:23",
-    "last_posted": "2021-07-30 01:19:36",
+    "last_posted": "2022-10-09 14:25:22",
     "posts": [
         {
             "postid": "522",
-            "username": "DarkMatter",
-            "nsfw": "false",
+            "username": "Zak",
             "content": "API is cool",
             "from": "API testing",
             "locked": "false",
+            "pnsfw": "false",
             "edited": null,
             "post_date": "2021-07-30 12:18:31"
         }
@@ -219,18 +219,16 @@ receive:
         {
             "replyid": "1473",
             "postid": "522",
-            "username": "DarkMatter",
-            "nsfw": "false",
+            "username": "Zak",
             "content": "Cool reply with the API",
             "from": "API testing",
+            "rnsfw": "false",
             "edited": null,
             "reply_date": "2021-07-30 12:49:12"
         }
     ]
 }
 ```
-
-`NOTE: UUID will not be null on the main site, we're just showing examples from canary`
 
 `POST` /user/get  
 `token` - api token from settings  
@@ -241,20 +239,18 @@ receive:
 ```json
 {
     "200": "Found user",
-    "uuid": null,
+    "uuid": "bblz_606df56f4d112",
     "username": "embed",
     "displayname": "embed",
-    "followers": 2,
-    "pfp": "https://i.imgur.com/Md5C3uy.gif",
-    "banner": null,
-    "coins": "0",
-    "rank": "founder",
-    "eventr": "lgbt19",
-    "patreon": "true",
-    "booster": "true",
-    "bio": "the best bubblez dev.",
+    "followers": 26,
+    "pfp": "https://cds.bubblez.app/v2/get/bblz_606df56f4d112/display",
+    "banner": "https://cds.bubblez.app/v2/get/bblz_606df56f4d112/banner",
+    "coins": "74",
+    "rank": "[\"founder\", \"verified\"]",
+    "badges": "[\"lgbt19\", \"alpha\", \"private\"]",
+    "bio": "the best founder (tbh)\r\nhttps://astolfo.co\r\n\r\nposts made here are of my own opinion and do not represent the views of Bubblez as a company.",
     "nsfw": "false",
-    "pronoun": "none",
+    "pronoun": "hehim",
     "ban": null,
     "created_at": "2019-10-22 12:04:01",
     "last_posted": null,
@@ -262,10 +258,10 @@ receive:
         {
             "postid": "280",
             "username": "embed",
-            "nsfw": "false",
-            "content": "gamimg",
+            "content": "gaming",
             "from": null,
             "locked": "false",
+            "pnsfw": "false",
             "edited": null,
             "post_date": "2020-08-09 17:15:19"
         }
@@ -280,7 +276,7 @@ receive:
 ```json
 {
     "200": "Pong",
-    "username": "DarkMatter",
+    "username": "Zak",
     "online_status": "2021-07-30 13:03:18"
 }
 ```
