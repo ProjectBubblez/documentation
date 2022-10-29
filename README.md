@@ -2,7 +2,7 @@
 
 - Docs
   - API
-    - V1 [API.md](https://github.com/ProjectBubblez/documentation/blob/main/docs/api/v1/API.md)
+    - V1 [API.md](https://github.com/ProjectBubblez/documentation/blob/main/docs/api/v1/API.md) [^V1API]
     - V2 [API.md](https://github.com/ProjectBubblez/documentation/blob/main/docs/api/v2/API.md) [^V2API]
   - libraries
     - [BUBBLEZ.JS.md](https://github.com/ProjectBubblez/documentation/blob/main/docs/libraries/BUBBLEZ.JS.md) [^BJS]
@@ -19,3 +19,4 @@
 [^BPY]: Bubblez.py is maintained by [MeesMeijer](https://github.com/MeesMeijer).
 [^V0]: V0 of the websocket has been discontinued since `November 30th 2021`.
 [^V2API]: V2 is in a draft stage and is currently not functional.
+[^V1API]: Last updated `October 29th 2022`.
