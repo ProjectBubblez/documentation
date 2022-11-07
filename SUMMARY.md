@@ -14,3 +14,4 @@
   * [api](docs/api/README.md)
     * [API Documentation V1](docs/api/api.md)
     * [API Documentation V2](docs/api/api-1.md)
+    * [Old API Documentation V2](docs/api/api-2.md)

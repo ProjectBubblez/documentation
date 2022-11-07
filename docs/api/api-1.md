@@ -1,19 +1,19 @@
 # API Documentation V2
-- This is a list of all the current endpoints with updated methods and responses (after will be a list of new endpoints for v2)
-- Draft 2
-- `reason` can be left NULL if you don't want a reason to your actions
-----------------------------------------------------------------------------------
+
+* This is a list of all the current endpoints with updated methods and responses (after will be a list of new endpoints for v2)
+* Draft 3
+* `reason` can be left NULL if you don't want a reason to your actions
+
+***
+
 ### Blogs
-----------------------------------------------------------------------------------
 
-`GET` `/blog/latest`
+{% swagger method="get" path="/latest" baseUrl="https://bubblez.app/api/v2/blog" summary="Get latest blog post" %}
+{% swagger-description %}
+`you don't need to send any data (this is a public endpoint)`
+{% endswagger-description %}
 
-request:
-```
-you don't need to send any data (this is a public endpoint)
-```
-
-response:
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
@@ -31,50 +31,99 @@ response:
 	}
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-----------------------------------------------------------------------------------
+***
+
 ### Posts
-----------------------------------------------------------------------------------
 
-`DELETE` `/post/{post_id}`
+{% swagger method="post" path="/post" baseUrl="https://bubblez.app/api/v2" summary="Post" %}
+{% swagger-description %}
 
-request:
-```json
-{
-	"token": "string",
-	"reason": "string"
-}
-```
+{% endswagger-description %}
 
-response:
+{% swagger-parameter in="body" required="true" name="token" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="parent_id" required="false" type="String" %}
+The ID of the post you want to reply to
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="content" type="String" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="from" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" type="Boolean" name="lock" %}
+`default "false"`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="nsfw" type="Boolean" %}
+`default "false"`
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
+{% code overflow="wrap" %}
 ```json
 {
 	"error": false,
 	"post": {
 		"id": "string",
-	},
-	"reason": "string"
+		"parent_id": "string",
+		"content": "string",
+		"from": "string",
+		"lock": "boolean",
+		"nsfw": "boolean"
+	}
 }
 ```
+{% endcode %}
+{% endswagger-response %}
+{% endswagger %}
 
-----------------------------------------------------------------------------------
+> `you only need "parent_id" if you're replying to a post or another reply`
 
-`UPDATE` `/post/{post_id}`
+{% swagger method="patch" path="/{post_id}" baseUrl="https://bubblez.app/api/v2/post" summary="Update post" %}
+{% swagger-description %}
 
-request:
-```json
-{
-	"token": "string",
-	"content": "string",
-	"lock": "boolean",
-	"nsfw": "boolean",
-	"reason": "string"
-}
-```
+{% endswagger-description %}
 
-`NOTE`: `for content, lock and nsfw: if left as null, nothing will be updated`
+{% swagger-parameter in="path" name="post_id" type="Integer" required="true" %}
 
-response:
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="token" required="true" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="content" type="String" %}
+Can be left as 
+
+`null`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="lock" type="Boolean" %}
+Can be left as 
+
+`null`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="nsfw" type="Boolean" %}
+Can be left as 
+
+`null`
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="reason" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
@@ -87,22 +136,25 @@ response:
 	"reason": "string"
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-`NOTE1`: `if "true" post has been locked, if "false" post has been unlocked`  
-`NOTE2`: `if "true" post has been set as nsfw, if "false" post has been unset as nsfw`
+> `for content, lock and nsfw: if left as null, nothing will be updated`
 
-----------------------------------------------------------------------------------
+{% swagger method="get" path="/{post_id}" baseUrl="https://bubblez.app/api/v2/post" summary="Get post" %}
+{% swagger-description %}
 
-`GET` `/post/{post_id}`
+{% endswagger-description %}
 
-request:
-```json
-{
-	"token": "string"
-}
-```
+{% swagger-parameter in="path" name="post_id" type="Integer" required="true" %}
 
-response:
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="token" type="String" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
@@ -127,61 +179,61 @@ response:
 	}
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-----------------------------------------------------------------------------------
+{% swagger method="delete" path="/{post_id}" baseUrl="https://bubblez.app/api/v2/post" summary="Delete post" %}
+{% swagger-description %}
 
-`POST` `/post`
+{% endswagger-description %}
 
-request:
-```json
-{
-	"token": "string",
-	"parent": "string",
-	"content": "string",
-	"from": "string",
-	"lock": "boolean",
-	"nsfw": "boolean"
-}
-```
+{% swagger-parameter in="path" name="post_id" required="true" type="Integer" %}
 
-`NOTE`: `for lock and nsfw: default "false"`
+{% endswagger-parameter %}
 
-response:
+{% swagger-parameter in="body" name="token" type="String" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="reason" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
 	"post": {
 		"id": "string",
-		"parent_id": "string",
-		"content": "string",
-		"from": "string",
-		"lock": "boolean",
-		"nsfw": "boolean"
-	}
+	},
+	"reason": "string"
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-`NOTE`: `you only need "parent_id" if you're replying to a post or another reply`
+***
 
-----------------------------------------------------------------------------------
 ### Users
-----------------------------------------------------------------------------------
 
-`GET` `/user`
+{% swagger method="get" path="/user" baseUrl="https://bubblez.app/api/v2" summary="Get user" %}
+{% swagger-description %}
 
-request:
-```json
-{
-	"token": "string",
-	"username": "string",
-	"uuid": "string"
-}
-```
+{% endswagger-description %}
 
-`NOTE1`: `please only send "username" OR "uuid", if you send both it will return an error`  
-`NOTE2`: `if both are null will send bot info`
+{% swagger-parameter in="body" name="token" type="String" required="true" %}
 
-response:
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="username" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="uuid" type="String" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
@@ -201,52 +253,93 @@ response:
 	}
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-`NOTE1`: `type: 0 = User, 1 = Bot`  
-`NOTE2`: `both nsfw and private will be "false" for bot accounts`  
-`NOTE3`: `A way to get other bot info will come later`
+> `Note:` `please only send "username" OR "uuid", if you send both it will return an error, if both are null will send bot info`
 
-----------------------------------------------------------------------------------
+> `NOTE1`: `type: 0 = User, 1 = Bot`\
+> `NOTE2`: `both nsfw and private will be "false" for bot accounts`\
+> `NOTE3`: `A way to get other bot info will come later`
 
-`GET` `/ping`
+***
 
-request:
-```json
-{
-	"token": "string"
-}
-```
+{% swagger method="get" path="/ping" baseUrl="https://bubblez.app/api/v2" summary="Get ping" %}
+{% swagger-description %}
 
-response:
+{% endswagger-description %}
+
+{% swagger-parameter in="body" name="token" type="String" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-`NOTE`: `This is used to tell if the site is online without a massive response back`
+> `This is used to tell if the site is online without a massive response back`
 
-----------------------------------------------------------------------------------
+***
+
 ### NEW FOR V2
-----------------------------------------------------------------------------------
 
 `UPDATE` `/profile`
 
-request:
-```json
-{
-	"token": "string",
-	"username": "string",
-	"displayname": "string",
-	"pfp": "string",
-	"banner": "string",
-	"bio": "string"
-}
-```
+{% swagger method="patch" path="/profile" baseUrl="https://bubblez.app/api/v2" summary="Update profile" %}
+{% swagger-description %}
 
-`NOTE`: `Leave any null to leave them unchanged`
+{% endswagger-description %}
 
-response:
+{% swagger-parameter in="body" name="token" type="String" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="username" type="String" %}
+Keep 
+
+`null`
+
+ to leave them unchanged
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="displayname" type="String" %}
+Keep 
+
+`null`
+
+ to leave them unchanged
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="pfp" type="String" %}
+Keep 
+
+`null`
+
+ to leave them unchanged
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="banner" type="String" %}
+Keep 
+
+`null`
+
+ to leave them unchanged
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="bio" type="String" %}
+Keep 
+
+`null`
+
+ to leave them unchanged
+{% endswagger-parameter %}
+
+{% swagger-response status="200: OK" description="" %}
 ```json
 {
 	"error": false,
@@ -259,7 +352,9 @@ response:
 	}
 }
 ```
+{% endswagger-response %}
+{% endswagger %}
 
-`NOTE`: `Will return NULL if unchanged`
+> `Will return NULL if unchanged`
 
-----------------------------------------------------------------------------------
+***
