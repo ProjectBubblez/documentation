@@ -1,3 +1,7 @@
+---
+layout: landing
+---
+
 # Public Documentation
 
 * Docs
