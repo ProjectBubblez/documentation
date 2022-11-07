@@ -88,7 +88,7 @@ The ID of the post you want to reply to
 
 > `you only need "parent_id" if you're replying to a post or another reply`
 
-{% swagger method="patch" path="/{post_id}" baseUrl="https://bubblez.app/api/v2/post" summary="Update post" %}
+{% swagger method="update" path="/{post_id}" baseUrl="https://bubblez.app/api/v2/post" summary="Update post" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -290,7 +290,7 @@ Can be left as
 
 `UPDATE` `/profile`
 
-{% swagger method="patch" path="/profile" baseUrl="https://bubblez.app/api/v2" summary="Update profile" %}
+{% swagger method="update" path="/profile" baseUrl="https://bubblez.app/api/v2" summary="Update profile" %}
 {% swagger-description %}
 
 {% endswagger-description %}
