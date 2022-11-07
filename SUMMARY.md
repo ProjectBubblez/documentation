@@ -1,0 +1,16 @@
+# Table of contents
+
+* [Public Documentation](README.md)
+* [docs](docs/README.md)
+  * [libraries](docs/libraries/README.md)
+    * [Bubblez.js Documentation](docs/libraries/BUBBLEZ.JS.md)
+    * [BUBBLEZ.PY](docs/libraries/BUBBLEZ.PY.md)
+  * [Websockets](docs/websockets/README.md)
+    * [Close codes](docs/websockets/CLOSECODES.md)
+    * [CONNECTING](docs/websockets/CONNECTING.md)
+    * [HEARTBEATS](docs/websockets/HEARTBEATS.md)
+    * [Websockets Documentation](docs/websockets/V0.md)
+    * [Version 1 documentation](docs/websockets/V1.md)
+  * [api](docs/api/README.md)
+    * [API Documentation V1](docs/api/api.md)
+    * [API Documentation V2](docs/api/api-1.md)
