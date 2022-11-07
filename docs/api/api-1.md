@@ -55,15 +55,15 @@ The ID of the post you want to reply to
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="from" type="String" %}
+{% swagger-parameter in="body" name="from" type="String" required="false" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" type="Boolean" name="lock" %}
+{% swagger-parameter in="body" type="Boolean" name="lock" required="false" %}
 `default "false"`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="nsfw" type="Boolean" %}
+{% swagger-parameter in="body" name="nsfw" type="Boolean" required="false" %}
 `default "false"`
 {% endswagger-parameter %}
 
@@ -101,25 +101,25 @@ The ID of the post you want to reply to
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="content" type="String" %}
-Can be left as 
+{% swagger-parameter in="body" name="content" type="String" required="false" %}
+Can be left as
 
 `null`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="lock" type="Boolean" %}
-Can be left as 
+{% swagger-parameter in="body" name="lock" type="Boolean" required="false" %}
+Can be left as
 
 `null`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="nsfw" type="Boolean" %}
-Can be left as 
+{% swagger-parameter in="body" name="nsfw" type="Boolean" required="false" %}
+Can be left as
 
 `null`
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="reason" type="String" %}
+{% swagger-parameter in="body" name="reason" type="String" required="false" %}
 
 {% endswagger-parameter %}
 
@@ -195,7 +195,7 @@ Can be left as
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="reason" type="String" %}
+{% swagger-parameter in="body" name="reason" type="String" required="false" %}
 
 {% endswagger-parameter %}
 
@@ -225,11 +225,11 @@ Can be left as
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="username" type="String" %}
+{% swagger-parameter in="body" name="username" type="String" required="false" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="uuid" type="String" %}
+{% swagger-parameter in="body" name="uuid" type="String" required="false" %}
 
 {% endswagger-parameter %}
 
@@ -261,8 +261,6 @@ Can be left as
 > `NOTE1`: `type: 0 = User, 1 = Bot`\
 > `NOTE2`: `both nsfw and private will be "false" for bot accounts`\
 > `NOTE3`: `A way to get other bot info will come later`
-
-***
 
 {% swagger method="get" path="/ping" baseUrl="https://bubblez.app/api/v2" summary="Get ping" %}
 {% swagger-description %}
@@ -299,44 +297,44 @@ Can be left as
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="username" type="String" %}
-Keep 
+{% swagger-parameter in="body" name="username" type="String" required="false" %}
+Keep
 
 `null`
 
- to leave them unchanged
+to leave them unchanged
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="displayname" type="String" %}
-Keep 
+{% swagger-parameter in="body" name="displayname" type="String" required="false" %}
+Keep
 
 `null`
 
- to leave them unchanged
+to leave them unchanged
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="pfp" type="String" %}
-Keep 
+{% swagger-parameter in="body" name="pfp" type="String" required="false" %}
+Keep
 
 `null`
 
- to leave them unchanged
+to leave them unchanged
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="banner" type="String" %}
-Keep 
+{% swagger-parameter in="body" name="banner" type="String" required="false" %}
+Keep
 
 `null`
 
- to leave them unchanged
+to leave them unchanged
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="bio" type="String" %}
-Keep 
+{% swagger-parameter in="body" name="bio" type="String" required="false" %}
+Keep
 
 `null`
 
- to leave them unchanged
+to leave them unchanged
 {% endswagger-parameter %}
 
 {% swagger-response status="200: OK" description="" %}
@@ -356,5 +354,3 @@ Keep
 {% endswagger %}
 
 > `Will return NULL if unchanged`
-
-***
