@@ -2,8 +2,8 @@
 
 * Docs
   * API
-    * V1 [API](docs/api/api.md) \[Last updated `October 29th 2022`.]
-    * V2 [API](docs/api/api-1.md) \[V2 is in a draft stage and is currently not functional.]
+    * V1 [API](docs/api/v1.md) \[Last updated `October 29th 2022`.]
+    * V2 [API](docs/api/v2.md) \[V2 is in a draft stage and is currently not functional.]
   * Libraries
     * [BUBBLEZ.JS](docs/libraries/BUBBLEZ.JS.md) \[Bubblez.js is maintained by [SliceCraft](https://github.com/SliceCraft).]
     * [BUBBLEZ.PY](docs/libraries/BUBBLEZ.PY.md) \[Bubblez.py is maintained by [MeesMeijer](https://github.com/MeesMeijer).]

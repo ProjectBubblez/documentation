@@ -12,5 +12,5 @@
     * [Websockets Documentation](docs/websockets/V0.md)
     * [Version 1 documentation](docs/websockets/V1.md)
   * [API](docs/api/README.md)
-    * [V1 API Documentation](docs/api/api.md)
-    * [V2 API Documentation](docs/api/api-1.md)
+    * [V1 API Documentation](docs/api/v1.md)
+    * [V2 API Documentation](docs/api/v2.md)
