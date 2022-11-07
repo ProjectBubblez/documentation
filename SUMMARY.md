@@ -4,7 +4,7 @@
 * [docs](docs/README.md)
   * [libraries](docs/libraries/README.md)
     * [Bubblez.js Documentation](docs/libraries/BUBBLEZ.JS.md)
-    * [BUBBLEZ.PY](docs/libraries/BUBBLEZ.PY.md)
+    * [Bubblez.py Documentation](docs/libraries/BUBBLEZ.PY.md)
   * [Websockets](docs/websockets/README.md)
     * [Close codes](docs/websockets/CLOSECODES.md)
     * [CONNECTING](docs/websockets/CONNECTING.md)

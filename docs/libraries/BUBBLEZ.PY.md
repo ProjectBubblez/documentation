@@ -1,4 +1,8 @@
-# BUBBLEZ.PY
+---
+description: Bubblez.py is maintained by MeesMeijer.
+---
+
+# Bubblez.py Documentation
 
 ## Bubblez.py - Api Module for [Bubblez.app](https://bubblez.app)
 
