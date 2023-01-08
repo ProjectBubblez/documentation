@@ -6,7 +6,7 @@ layout: landing
 
 |            API           |                          Notes                          |
 | :----------------------: | :-----------------------------------------------------: |
-| [V1 API](docs/api/v1.md) |            Last updated `October 29th 2022`.            |
+| [V1 API](docs/api/v1.md) |             Discontinued `January 7th 2023`.            |
 | [V2 API](docs/api/v2.md) | V2 is in a draft stage and is currently not functional. |
 
 |                  Libraries                 |                                   Notes                                  |
@@ -17,8 +17,8 @@ layout: landing
 |                  WebSockets                 |                                 Notes                                 |
 | :-----------------------------------------: | :-------------------------------------------------------------------: |
 |         [V0](docs/websockets/V0.md)         | V0 of the WebSocket has been discontinued since `November 30th 2021`. |
-|         [V1](docs/websockets/V1.md)         |                                                                       |
-|          [README](docs/websockets/)         |                                                                       |
-| [CLOSECODES](docs/websockets/CLOSECODES.md) |                                                                       |
-| [CONNECTING](docs/websockets/CONNECTING.md) |                                                                       |
-| [HEARTBEATS](docs/websockets/HEARTBEATS.md) |                                                                       |
+|         [V1](docs/websockets/V1.md)         |  V1 of the WebSocket has been discontinued since `January 7th 2023`.  |
+|          [README](docs/websockets/)         |                              `Inaccurate`                             |
+| [CLOSECODES](docs/websockets/CLOSECODES.md) |                              `Inaccurate`                             |
+| [CONNECTING](docs/websockets/CONNECTING.md) |                              `Inaccurate`                             |
+| [HEARTBEATS](docs/websockets/HEARTBEATS.md) |                              `Inaccurate`                             |
