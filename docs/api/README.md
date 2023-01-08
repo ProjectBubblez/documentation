@@ -10,7 +10,7 @@ Everything you need to know to communicate with the Bubblez API
 
 This is the most accessible place to find out what versions of the API are still working or have been since deprecated/discontinued
 
-| Versions    | Status                               |
-| ----------- | ------------------------------------ |
-| [V2](v2.md) | Coming Soon                          |
-| [V1](v1.md) | Discontinued \`7th of January 2023\` |
+| Versions    | Status                             |
+| ----------- | ---------------------------------- |
+| [V2](v2.md) | Coming Soon                        |
+| [V1](v1.md) | Discontinued `7th of January 2023` |
